@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background-image: url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1427&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+}
+
+.container{
+    text-align: center;
+    color: white;
+    margin: 2% auto 5%;
+}
+
+#quote{
+    margin: 5% 10%;
+    font-size: 18px;
+    text-shadow: 2px 2px #333;
+}
+
+#getQuote{
+    margin-top: 5%;
+}
+
+#tweet{
+    margin-top: 7.3%;
+    position: absolute;
+}
+
+img:hover{
+  cursor: pointer;
+}
+
+
+/*
+- text shadow & font improvement
+- heading
+- spaces & alignment?
+*/
