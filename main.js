@@ -1,13 +1,18 @@
-var api = "https://dw-quote-api.herokuapp.com/quotes/Rose%20Tyler";
-// generate quote on button click
-document.getElementById('getQuote').onclick = function(){
-    // get quote (ajax request)
-    // display quote
-    $.getJSON(api, function(data){
-        quote = data[0].quote
-        document.getElementById('quote').innerHTML = quote;
+var api = "https://dw-quote-api.herokuapp.com/quotes";
 
-        // check if tweet button exists
+// Generate Quote on Button Click
+document.getElementById('getQuote').onclick = function(){
+    // AJAX Call
+    $.getJSON(api, function(data){
+        quote = data[0].quote;
+        character = data[0].character;
+        // Display Quote
+        document.getElementById('quote').innerHTML = "<i class='fa fa-angle-double-right' aria-hidden='true'></i>"
+                                                        +quote+
+                                                     "<i class='fa fa-angle-double-left' aria-hidden='true'></i></br>"
+                                                      + character;
+
+        // Check If Tweet Button Exists
         if(!document.getElementById('tweet')){
             addTweetBtn();
         }  
@@ -15,7 +20,7 @@ document.getElementById('getQuote').onclick = function(){
    
 };
 
-// generate tweet button
+// Generate Tweet Button
 function addTweetBtn(){
     var img = document.createElement("img");
     img.id = "tweet";
@@ -24,20 +29,12 @@ function addTweetBtn(){
     tweetQuote();
 };
 
-// add tweet function
+// Add Tweet Function
 function tweetQuote(){
     document.getElementById('tweet').onclick = function(){
-        var quote = document.getElementById('quote').textContent;
-        var url = 'https://twitter.com/intent/tweet?text="' + quote + '" - The Doctor';
-        window.open(url, "Tweet Quote", "resizable,height=360,width=500");
+        var encodedQuote = encodeURI(quote);
+        var encodedCharacter = encodeURI(character);
+        var url = 'https://twitter.com/intent/tweet?text="' + encodedQuote + '" - ' + encodedCharacter;
+        window.open(url, "Tweet Quote", "resizable, height=360, width=500");
     };
 };
-
-
-var quote = "<i class='fa fa-angle-double-right' aria-hidden='true'></i></i>";
-
-// tweet encoding
-// callback? for delayed tweet button & quote
-// companion quotes, too?
-// character Name
-// include icons
