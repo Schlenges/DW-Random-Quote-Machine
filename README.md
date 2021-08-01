@@ -1,7 +1,6 @@
+ARCHIVED
 # Random Quote Machine
-A Doctor Who themed quote generator with tweet functionality. It uses the [Doctor Who Quotes API](https://github.com/Schlenges/doctor-who-quote-api). The first quote request may take a few seconds while the Heroku hosted app is waking up.
-
-https://schlenges.github.io/random-quote-machine/
+A Doctor Who themed quote generator with tweet functionality. It uses the [Doctor Who Quotes API](https://github.com/Schlenges/doctor-who-quote-api).
 
 **Original Assignment:** Build a random quote machine. Use whichever libraries or APIs you need. Give it your own personal style. Fulfill the below user stories:
 
